@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover" />
+    <title>Al-Aqmar Mosque - 3D Model</title>
+    <meta name="theme-color" content="#161a18" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main id="viewer" aria-label="Interactive 3D model viewer">
+      <canvas id="canvas"></canvas>
+
+      <header class="topbar">
+        <div class="brand">
+          <span class="brand-mark" aria-hidden="true"></span>
+          <div>
+            <p>ARCHITECTURAL STUDY</p>
+            <h1>Al-Aqmar Mosque</h1>
+          </div>
+        </div>
+      </header>
+
+      <div class="instructions" aria-hidden="true">
+        <span>Drag to rotate</span>
+        <i></i>
+        <span>Scroll or pinch to zoom</span>
+        <i></i>
+        <span>Right-drag or two-finger drag to pan</span>
+      </div>
+
+      <button id="reset-view" class="reset-button" type="button" aria-label="Reset camera view">
+        Reset view
+      </button>
+
+      <div id="loader" class="loader" role="status">
+        <div class="loader-ring"></div>
+        <strong id="progress">0%</strong>
+        <span>Loading model</span>
+      </div>
+
+      <div id="error" class="error" hidden>
+        <strong>Unable to load the model</strong>
+        <span>Make sure the GLB file is hosted with this page.</span>
+      </div>
+    </main>
+
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://cdn.jsdelivr.net/npm/three@0.160.1/build/three.module.js",
+          "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.1/examples/jsm/"
+        }
+      }
+    </script>
+    <script type="module" src="./viewer.js"></script>
+  </body>
+</html>
