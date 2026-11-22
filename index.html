@@ -8,8 +8,15 @@
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
-    <main id="viewer" aria-label="Interactive 3D model viewer">
-      <canvas id="canvas"></canvas>
+    <main id="viewer" aria-label="Interactive 3D model of Al-Aqmar Mosque">
+      <iframe
+        title="Al-Aqmar Mosque - Cairo | EGYPT"
+        src="https://sketchfab.com/models/f2f20ea58107449c8b6d7fab28366b98/embed?autostart=1&transparent=1"
+        allowfullscreen
+        mozallowfullscreen="true"
+        webkitallowfullscreen="true"
+        allow="autoplay; fullscreen; xr-spatial-tracking"
+      ></iframe>
 
       <header class="topbar">
         <div class="brand">
@@ -20,39 +27,6 @@
           </div>
         </div>
       </header>
-
-      <div class="instructions" aria-hidden="true">
-        <span>Drag to rotate</span>
-        <i></i>
-        <span>Scroll or pinch to zoom</span>
-        <i></i>
-        <span>Right-drag or two-finger drag to pan</span>
-      </div>
-
-      <button id="reset-view" class="reset-button" type="button" aria-label="Reset camera view">
-        Reset view
-      </button>
-
-      <div id="loader" class="loader" role="status">
-        <div class="loader-ring"></div>
-        <strong id="progress">0%</strong>
-        <span>Loading model</span>
-      </div>
-
-      <div id="error" class="error" hidden>
-        <strong>Unable to load the model</strong>
-        <span>Make sure the GLB file is hosted with this page.</span>
-      </div>
     </main>
-
-    <script type="importmap">
-      {
-        "imports": {
-          "three": "https://cdn.jsdelivr.net/npm/three@0.160.1/build/three.module.js",
-          "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.1/examples/jsm/"
-        }
-      }
-    </script>
-    <script type="module" src="./viewer.js"></script>
   </body>
 </html>
