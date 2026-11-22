@@ -4,29 +4,64 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover" />
     <title>Al-Aqmar Mosque - 3D Model</title>
-    <meta name="theme-color" content="#161a18" />
+    <meta name="theme-color" content="#f0e8db" />
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
-    <main id="viewer" aria-label="Interactive 3D model of Al-Aqmar Mosque">
-      <iframe
-        title="Al-Aqmar Mosque - Cairo | EGYPT"
-        src="https://sketchfab.com/models/f2f20ea58107449c8b6d7fab28366b98/embed?autostart=1&transparent=1"
-        allowfullscreen
-        mozallowfullscreen="true"
-        webkitallowfullscreen="true"
-        allow="autoplay; fullscreen; xr-spatial-tracking"
-      ></iframe>
-
-      <header class="topbar">
-        <div class="brand">
-          <span class="brand-mark" aria-hidden="true"></span>
-          <div>
-            <p>ARCHITECTURAL STUDY</p>
-            <h1>Al-Aqmar Mosque</h1>
+    <main id="app" aria-label="Al-Aqmar Mosque 3D viewer">
+      <section id="chooser" class="chooser" aria-labelledby="page-title">
+        <header class="chooser-header">
+          <div class="brand">
+            <span class="brand-mark" aria-hidden="true"></span>
+            <div>
+              <p>ARCHITECTURAL STUDY</p>
+              <h1 id="page-title">Al-Aqmar Mosque</h1>
+            </div>
           </div>
+          <span class="edition">CAIRO · EGYPT</span>
+        </header>
+
+        <div class="choices" role="list" aria-label="Choose a 3D model">
+          <button class="choice" type="button" data-model="mosque" role="listitem">
+            <span class="choice-number">01</span>
+            <span class="choice-copy">
+              <small>OVERVIEW</small>
+              <strong>Al-Aqmar Mosque</strong>
+            </span>
+            <span class="choice-arrow" aria-hidden="true">↗</span>
+          </button>
+
+          <button class="choice" type="button" data-model="details" role="listitem">
+            <span class="choice-number">02</span>
+            <span class="choice-copy">
+              <small>ARCHITECTURAL DETAILS</small>
+              <strong>Mosque Details</strong>
+            </span>
+            <span class="choice-arrow" aria-hidden="true">↗</span>
+          </button>
         </div>
-      </header>
+      </section>
+
+      <section id="viewer" class="viewer" aria-label="Interactive 3D model" hidden>
+        <header class="viewer-header">
+          <button id="back-button" class="back-button" type="button" aria-label="Choose another model">
+            <span aria-hidden="true">←</span>
+            Models
+          </button>
+          <h2 id="viewer-title">Al-Aqmar Mosque</h2>
+        </header>
+
+        <iframe
+          id="model-frame"
+          title="Al-Aqmar Mosque 3D model"
+          allowfullscreen
+          mozallowfullscreen="true"
+          webkitallowfullscreen="true"
+          allow="autoplay; fullscreen; xr-spatial-tracking"
+        ></iframe>
+      </section>
     </main>
+
+    <script src="./viewer.js"></script>
   </body>
 </html>
